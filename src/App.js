@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import SearchBox from './components/searchBox'
+import MapBox from './components/mapBox'
+import getAddress from './services'
 import './App.css';
 
 class App extends Component {
+  state = { 
+    data: {},
+    mapActive: false
+  };
+
+  handleMapBox = () => {
+    this.setState({data: {}})
+  }
+
+  searchAddress = cep => {
+    getAddress(cep)
+      .then(response => this.setState({data: response.data}))
+      .catch(e => new Error(e))
+  }
+
   render() {
+    const { data } = this.state;
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Consulta de endereço</h1>
+        <SearchBox searchAddress={this.searchAddress} />
+        <MapBox handleMapBox={this.handleMapBox} data={data} />
       </div>
     );
   }
