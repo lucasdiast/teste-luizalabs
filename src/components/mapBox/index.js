@@ -23,10 +23,10 @@ class MapBox extends Component {
     const { handleMapBox } = this.props;
     const { center, zoom } = this.state;
     const {
-      uf,
       cep,
       logradouro,
       localidade,
+      uf,
       bairro,
       lat,
       lng
@@ -47,7 +47,7 @@ class MapBox extends Component {
             defaultZoom={zoom}
             center={center}
           >
-            <Pin lat={lat} lng={lng} text="My Marker" />
+            <Pin lat={lat} lng={lng} text="Aqui estou" />
           </GoogleMapReact>
         </div>
       </div>
