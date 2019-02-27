@@ -2,7 +2,12 @@ import React, { Component, Fragment } from "react";
 import GoogleMapReact from "google-map-react";
 import "./index.css";
 
-const Pin = ({ text }) => <div>{text}</div>;
+const Pin = () => (
+  <img
+    style={{ height: "25px", width: "25px" }}
+    src="https://lh3.googleusercontent.com/T1sAgTa9YLQB8up2YZSaeUDkgYlWMwxx9SSLBylycbKQZmL7ngtbQZI1BLpgX2USP0g"
+  />
+);
 
 class MapBox extends Component {
   state = {

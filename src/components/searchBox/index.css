@@ -16,6 +16,7 @@
 .SearchBox__wrapper.txtField {
   margin-right: 10px;
   line-height: 21px;
+  padding-left: 8px;
 }
 
 .SearchBox__wrapper.btn {
