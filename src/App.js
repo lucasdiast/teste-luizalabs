@@ -35,7 +35,6 @@ class App extends Component {
         mapActive: true
       });
     } catch (e) {
-      console.log({ e });
       this.notify(e.message);
     }
   };
