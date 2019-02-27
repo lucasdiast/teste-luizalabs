@@ -1,3 +1,5 @@
+The lastest version is current on: (https://magalu.now.sh/)
+
 ## Available Scripts
 
 In the project directory, you can run:
