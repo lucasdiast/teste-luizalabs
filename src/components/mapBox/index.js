@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import GoogleMapReact from "google-map-react";
 import "./index.css";
 
@@ -33,12 +33,19 @@ class MapBox extends Component {
     } = this.props.data;
 
     return (
-      <div className="MapBox">
-        <div>{logradouro}</div>
-        <div>{bairro}</div>
-        <div>{`${localidade} - ${uf}`}</div>
-        <div>{cep}</div>
-        <button onClick={handleMapBox}>X</button>
+      <section className="MapBox">
+        {cep && (
+          <Fragment>
+            <h2>{logradouro}</h2>
+            <div>{bairro}</div>
+
+            <div>{cep}</div>
+            <div>{`${localidade} - ${uf}`}</div>
+            <button className="btn" onClick={handleMapBox}>
+              X
+            </button>
+          </Fragment>
+        )}
         <div style={{ height: "75vh", width: "100%" }}>
           <GoogleMapReact
             bootstrapURLKeys={{
@@ -50,7 +57,7 @@ class MapBox extends Component {
             <Pin lat={lat} lng={lng} text="Aqui estou" />
           </GoogleMapReact>
         </div>
-      </div>
+      </section>
     );
   }
 }

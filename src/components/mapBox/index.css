@@ -1,0 +1,23 @@
+.MapBox {
+  position: relative;
+  padding: 25px;
+  width: calc(100% - 50px);
+  border: 1px solid #6666;
+  border-radius: 2px;
+  box-shadow: 1px 1px #8888;
+}
+
+.MapBox h2 {
+  margin-top: 0;
+}
+
+.MapBox div {
+  margin: 10px 0;
+}
+
+.MapBox button {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  background: #ff2d55;
+}

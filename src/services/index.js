@@ -5,5 +5,5 @@ export const getAddress = cep =>
 
 export const getGeolocation = address =>
   axios.get(
-    `https://maps.googleapis.com/maps/api/geocode/json'?address=${address},+CA&key=AIzaSyB4V_nUJoT7jByX-SdFiHyFOR0Jjm0C4ds`
+    `https://maps.googleapis.com/maps/api/geocode/json?address=${address},+CA&key=AIzaSyB4V_nUJoT7jByX-SdFiHyFOR0Jjm0C4ds`
   );

@@ -11,16 +11,23 @@ class SearchBox extends Component {
     const { searchAddress } = this.props;
 
     return (
-      <div className="SearchBox">
+      <section className="SearchBox">
+        <h3 className="SearchBox__title">Consultar</h3>
         <div className="SearchBox__wrapper">
-          <label className="SearchBox__title">CEP</label>
+          <label className="SearchBox__wrapper title">CEP</label>
           <input
             type="text"
+            className="SearchBox__wrapper txtField"
             onChange={e => this.setState({ cep: e.target.value })}
           />
-          <button onClick={() => searchAddress(cep)}>Buscar</button>
+          <button
+            className="SearchBox__wrapper btn"
+            onClick={() => searchAddress(cep)}
+          >
+            Buscar
+          </button>
         </div>
-      </div>
+      </section>
     );
   }
 }

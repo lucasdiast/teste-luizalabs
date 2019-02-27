@@ -11,11 +11,11 @@ import "react-toastify/dist/ReactToastify.css";
 class App extends Component {
   state = {
     data: {},
-    mapActive: false
+    mapActive: true
   };
 
   handleMapBox = () => {
-    this.setState({ data: {} });
+    this.setState({ data: {}, mapActive: !this.state.mapActive });
   };
 
   searchAddress = async cep => {
@@ -31,7 +31,8 @@ class App extends Component {
       );
 
       return this.setState({
-        data: { ...address, ...geolocation.geometry.location }
+        data: { ...address, ...geolocation.geometry.location },
+        mapActive: true
       });
     } catch (e) {
       this.notify(e.message);
@@ -45,13 +46,13 @@ class App extends Component {
   };
 
   render() {
-    const { data } = this.state;
+    const { data, mapActive } = this.state;
 
     return (
       <div className="App">
         <h1>Consulta de endereço</h1>
         <SearchBox searchAddress={this.searchAddress} />
-        <MapBox handleMapBox={this.handleMapBox} data={data} />
+        {mapActive && <MapBox handleMapBox={this.handleMapBox} data={data} />}
         <ToastContainer />
       </div>
     );

@@ -1,0 +1,23 @@
+.SearchBox {
+  padding: 25px;
+  background-color: #6666;
+  margin-bottom: 25px;
+  border-radius: 5px;
+}
+
+.SearchBox__title {
+  margin: 0 0 15px 0;
+}
+
+.SearchBox__wrapper.title {
+  margin-right: 10px;
+}
+
+.SearchBox__wrapper.txtField {
+  margin-right: 10px;
+  line-height: 21px;
+}
+
+.SearchBox__wrapper.btn {
+  background: #00a1de;
+}
