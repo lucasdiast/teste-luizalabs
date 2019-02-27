@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "now-build": "npm run build"
+    "now-build": "npm run release && now && now alias"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -6,6 +6,7 @@ const Pin = () => (
   <img
     style={{ height: "25px", width: "25px" }}
     src="https://lh3.googleusercontent.com/T1sAgTa9YLQB8up2YZSaeUDkgYlWMwxx9SSLBylycbKQZmL7ngtbQZI1BLpgX2USP0g"
+    alt="logo-labs"
   />
 );
 
@@ -17,6 +18,14 @@ class MapBox extends Component {
     },
     zoom: 16
   };
+
+  componentWillMount() {
+    if (this.props.data.cep) {
+      const { lat, lng } = this.props.data;
+
+      this.setState({ center: { lat, lng } });
+    }
+  }
 
   componentWillReceiveProps(nextProps) {
     const { lat, lng } = nextProps.data;
@@ -59,7 +68,7 @@ class MapBox extends Component {
             defaultZoom={zoom}
             center={center}
           >
-            <Pin lat={lat} lng={lng} text="Aqui estou" />
+            <Pin lat={lat} lng={lng} />
           </GoogleMapReact>
         </div>
       </section>
